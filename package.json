@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "@stfy/react-editor.js": "^0.1.5",
-    "firebase": "^6.6.2",
-    "firebase-functions": "^3.13.0",
+    "firebase": "^9.6.4",
+    "firebase-functions": "^3.16.0",
     "font-awesome": "^4.7.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",

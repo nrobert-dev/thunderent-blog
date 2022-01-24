@@ -18,8 +18,8 @@ const MainPage = () => {
                 <h2>master of <span style={{color : COLORS.primary}}>SOME</span></h2>
                 <LinksContainer>
                     <SocialLink  target="_blank" href="https://thunderent.itch.io/dream-of-me"><SocialIcon className="fa fa-gamepad" aria-hidden="true"/></SocialLink>
-                    <SocialLink  target="_blank" href="https://robertnechitelea.com/"><SocialIcon className="fa fa-address-card" aria-hidden="true"/></SocialLink>
-                    <SocialLink  target="_blank" href="https://github.com/thunderent"><SocialIcon className="fa fa-github" aria-hidden="true"/></SocialLink>      
+                    <SocialLink  target="_blank" href="https://robertnc.com/"><SocialIcon className="fa fa-address-card" aria-hidden="true"/></SocialLink>
+                    <SocialLink  target="_blank" href="https://github.com/nrobert-dev"><SocialIcon className="fa fa-github" aria-hidden="true"/></SocialLink>      
                 </LinksContainer>
             </TitleContainer>
             <AuthorCard></AuthorCard>

@@ -9,7 +9,10 @@ import * as utils from "../../utils/utils.js";
 import {withRouter} from 'react-router-dom';
 import {Header,Title,ArticleContent,CoverImage,DetailsText,SmallDescription,ShareSection,styles, SmallTag, ShareFacebookButton} from "./Styling/ArticleStyling.js";
 import {serializeArticleForShare} from "../../utils/utils";
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 //Markdown converter settings
 let converter = new Showdown.Converter({
     tables: true,
@@ -108,7 +111,22 @@ const Article = ({history}) => {
                     </p> : null
                 }
             </div>
-            <ArticleContent dangerouslySetInnerHTML={{ __html : sanitizeHtml(blogContent.content,{allowedTags: sanitizeHtml.defaults.allowedTags.concat([ 'h1','h2' ])})}}/>
+            {utils.splitByCodeTags(blogContent.content).map(d => {
+                if(d.type === 'markdown'){
+                    return <ArticleContent dangerouslySetInnerHTML={{ __html : sanitizeHtml(d.text,{allowedTags: sanitizeHtml.defaults.allowedTags.concat([ 'h1','h2' ])})}}/>
+                }
+                else if(d.type === 'code'){
+                    return(
+                        <ArticleContent>
+                            <SyntaxHighlighter language={blogContent.lang} style={dracula}>
+                                {d.text}
+                            </SyntaxHighlighter>
+                        </ArticleContent>
+                    )
+                }
+                return null;
+            })}
+
             <div style={styles.footer}>
                 <AuthorCard/>
                 <br></br>

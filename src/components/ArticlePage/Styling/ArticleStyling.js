@@ -22,10 +22,10 @@ export const ArticleContent = styled.div`
     word-wrap: break-word;
     white-space:normal;
     line-height:1.6;
-    margin : 30px auto 90px auto;
+    margin : 5px auto 5px auto;
     max-width:50em;
     font-size:19px;
-    padding:10px;
+    padding: 0px 10px;
 `;
 
 export const CoverImage = styled.img` 

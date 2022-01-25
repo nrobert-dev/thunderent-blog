@@ -74,12 +74,12 @@ const getOpenGraph = (org,id) => {
 		og += `<meta property="og:title" content="${defaultTitle}" />`;
 		og += `<meta property="og:description" content="${defaultDesc}" />`;
 		og += `<meta property="og:image" content="${defaultLogo}" />`;
-		og += `<meta property="og:url" content="https://masterofso.me" />`;
+		og += `<meta property="og:url" content="https://blog.robertnc.com" />`;
 		return og;
 	}
 	og += `<meta property="og:title" content="${org.title || defaultTitle}" />`;
 	og += `<meta property="og:description" content="${org.description || defDesc}" />`;
 	og += `<meta property="og:image" content="${org.thumbnail || defLogo}" />`;
-	og += `<meta property="og:url" content="https://masterofso.me/article/${id}" />`;
+	og += `<meta property="og:url" content="https://blog.robertnc.com/article/${id}" />`;
 	return og;
 };

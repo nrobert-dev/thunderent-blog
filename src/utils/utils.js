@@ -25,3 +25,46 @@ export const serializeArticleForShare = (params) => {
     .map(param => `${param}=${encodeURIComponent(params[param].trim())}`)
     .join("&");   
 };
+
+export const splitByCodeTags = (source) => {
+    let clonedSource = source;
+    let splitData = [];
+
+    const tagLength = "</code></pre>".length;
+
+    if(clonedSource){
+        while(clonedSource){
+            const indexStart = clonedSource.indexOf("<pre><code>");
+            const indexEnd = clonedSource.indexOf("</code></pre>");  
+            
+            if(indexEnd === -1 || indexStart === -1){
+                splitData.push({
+                    text : clonedSource,
+                    type : 'markdown'
+                });
+                clonedSource = '';
+            }
+            
+            else{
+                splitData.push({
+                    text : clonedSource.substring(0,indexStart),
+                    type : 'markdown'
+                });
+
+                let codeSnippet = clonedSource.substring(indexStart+tagLength-2,indexEnd);
+
+                // Temporary fix for wrong < or > symbols.
+                codeSnippet = codeSnippet.replace(/&gt;/g, '>').replace(/&lt;/g,'<');
+             
+                splitData.push({
+                    text : codeSnippet,
+                    type : 'code'
+                });
+    
+                clonedSource = clonedSource.substring(indexEnd+tagLength);
+            } 
+        }
+    }
+
+    return splitData;
+}

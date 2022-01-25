@@ -8,7 +8,7 @@ const Footer = () => {
             <FooterSection>
                 <h2>master of <span style={{color : COLORS.primary}}>SOME</span></h2>
             </FooterSection>
-            <small style={{color:"gray"}}>Thunderent 2020. Created with the help of React and Firebase</small>
+            <small style={{color:"gray"}}>Robert {new Date().getFullYear()}. Bunnies are awesome, don't you think so?</small>
         </FooterContainer>
     )
 }

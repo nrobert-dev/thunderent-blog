@@ -13,6 +13,7 @@
     "react-particles-js": "^2.7.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.4",
+    "react-syntax-highlighter": "^15.4.5",
     "sanitize-html": "^1.27.5",
     "sanitize-html-react": "^1.13.0",
     "showdown": "^1.9.1",

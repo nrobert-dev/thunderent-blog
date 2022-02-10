@@ -13,6 +13,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import {SEO} from "../SEO/SEO";
 //Markdown converter settings
 let converter = new Showdown.Converter({
     tables: true,
@@ -85,6 +86,13 @@ const Article = ({history}) => {
     
     return(
         <div>
+            <SEO
+                title={blogContent.title}
+                description={blogContent.description}
+                image={blogContent.mainCover}
+                type={'article'}
+                url={`https://blog.robertnc.com/article/${blogContent.id}`}
+            />
             <div style={{height:"80px"}}></div>
                 <Header>
                     <div>
